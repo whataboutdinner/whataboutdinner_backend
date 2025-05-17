@@ -1,0 +1,40 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+  customHeaders:
+    - pattern: '**/*'
+      headers:
+        - key: 'Strict-Transport-Security'
+          value: 'max-age=31536000; includeSubDomains'
+        - key: 'X-Content-Type-Options'
+          value: 'nosniff'
+        - key: 'X-Frame-Options'
+          value: 'SAMEORIGIN'
+        - key: 'X-XSS-Protection'
+          value: '1; mode=block'
+  
+  # Domain configuration for whataboutdinner.food
+  domain:
+    - domain: whataboutdinner.food
+      enableAutoSubdomain: true
+      subdomains:
+        - www
+        - admin
+    
+  environmentVariables:
+    NEXT_PUBLIC_API_URL: https://api.whataboutdinner.food
+    NEXT_PUBLIC_SOCKET_URL: https://api.whataboutdinner.food
+    NEXT_PUBLIC_DOMAIN: whataboutdinner.food

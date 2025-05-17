@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* NEW Variables for Tailwind Theme (HSL values are space-separated for use with hsl()) */
+  --background: 255 255 255; /* White */
+  --foreground: 30 41 59;    /* Slate 700 */
+
+  --card: 255 255 255;       /* White */
+  --card-foreground: 30 41 59; /* Slate 700 */
+
+  --popover: 255 255 255;
+  --popover-foreground: 30 41 59;
+
+  --primary: 147 197 253;        /* Light Blue (Tailwind blue-300) - RGB: 147, 197, 253 */
+  --primary-foreground: 17 24 39; /* Darker text for on-primary (Tailwind gray-900) */
+
+  --secondary: 229 231 235;    /* Light Gray (Tailwind gray-200) */
+  --secondary-foreground: 30 41 59; /* Slate 700 */
+
+  --muted: 243 244 246;      /* Very Light Gray (Tailwind gray-100) */
+  --muted-foreground: 100 116 139; /* Slate 500 */
+
+  --accent: 96 165 250;         /* A slightly brighter blue (Tailwind blue-400) */
+  --accent-foreground: 17 24 39;   /* Tailwind gray-900 */
+
+  --destructive: 60 100 50; /* Yellow (HSL: 60, 100%, 50%) - Changed from Red for error messages */
+  --destructive-foreground: 30 41 59; /* Dark text for on-yellow (Slate 700), was white */
+
+  --border: 209 213 219;       /* Light Gray border (Tailwind gray-300) */
+  --input: 209 213 219;        /* Light Gray input border (Tailwind gray-300) */
+  --ring: 147 197 253;         /* Light Blue for focus rings (Tailwind blue-300) */
+
+  --radius: 0.5rem; /* From your tailwind.config.js */
+
+  /* Updated RGB variables to align with new theme */
+  --primary-color-rgb: 147, 197, 253; /* Changed from orange to primary blue */
+  --secondary-color-rgb: 53, 126, 103; /* Your original green, kept as is */
+  --text-color-rgb: 51, 51, 51;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Your existing custom CSS classes below */
+/* You might need to update these to use the new HSL variables or ensure they don't conflict */
+
+.hero-section {
+  background-image: url('/images/festive_dinner_table.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.food-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-section {
+  background-image: url('/images/food_preparation.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.recipe-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.recipe-content {
+  position: relative;
+  z-index: 2;
+}
+
+.restaurant-section {
+  background-image: url('/images/dining_table.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.restaurant-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.restaurant-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Example: If you want to keep using your old .btn-primary with the orange */
+/* This class now uses the updated --primary-color-rgb which is blue */
+.btn-primary {
+  background-color: rgb(var(--primary-color-rgb));
+  color: hsl(var(--primary-foreground)); /* Using primary-foreground for better contrast with blue */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  /* Consider a slightly darker blue for hover, e.g., using Tailwind blue-400 (var(--accent)) */
+  background-color: hsl(var(--accent)); 
+}
+
+.btn-secondary {
+  background-color: rgb(var(--secondary-color-rgb));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(var(--secondary-color-rgb), 0.9);
+}
+
+.card {
+  background-color: hsl(var(--card)); /* Using new theme variable */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid hsl(var(--input)); /* Using new theme variable */
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: hsl(var(--primary)); /* Using new theme variable */
+  box-shadow: 0 0 0 3px hsla(var(--primary), 0.2);
+}
+
+.header {
+  background-color: hsl(var(--card)); /* Using new theme variable */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: hsl(var(--muted)); /* Using new theme variable */
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+

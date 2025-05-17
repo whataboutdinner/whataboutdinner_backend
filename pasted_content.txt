@@ -1,0 +1,11 @@
+remote: Resolving deltas: 100% (14990/14990), completed with 11 local objects.
+remote: warning: File node_modules/.pnpm/@cloudflare+workerd-darwin-64@1.20250310.0/node_modules/@cloudflare/workerd-darwin-64/bin/workerd is 96.90 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: error: Trace: 1ca710ebc403450a0e4aeb6e6084d32e37de7b995bc495623fc770e751f7f5ab
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File node_modules/.pnpm/@next+swc-darwin-x64@15.1.4/node_modules/@next/swc-darwin-x64/next-swc.darwin-x64.node is 121.55 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/whataboutdinner/what-about-dinner-frontend.git
+ ! [remote rejected]   master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/whataboutdinner/what-about-dinner-frontend.git'
+Nicodemuss-Mac-mini:food-voting-app nicodemusjohnson$ 
+Nicodemuss-Mac-mini:food-voting-app nicodemusjohnson$ 
